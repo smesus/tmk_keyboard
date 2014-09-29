@@ -90,88 +90,45 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(  // layer 0 : default
         // left hand
-        EQL, 1,   2,   3,   4,   5,   ESC,
-        BSLS,Q,   W,   E,   R,   T,   FN2,
-        TAB, A,   S,   D,   F,   G,
-        LSFT,Z,   X,   C,   V,   B,   FN1,
-        LGUI,GRV, BSLS,LEFT,RGHT,
-                                      LCTL,LALT,
-                                           HOME,
-                                 BSPC,DEL, END,
+        ESC , FN11, FN12, FN13, FN14, FN15, CAPS,
+        GRV , BSPC, D   , R   , W   , B   , CAPS,
+        Q   , A   , S   , FN3 , T   , G   ,
+        FN7 , Z   , X   , M   , C   , V   , INS ,
+        FN7 , LALT, FN20, TAB , FN24,
+                                      1   , 2   ,
+                                            GRV ,
+                                LSFT, FN2 , DEL ,
         // right hand
-             FN3, 6,   7,   8,   9,   0,   MINS,
-             LBRC,Y,   U,   I,   O,   P,   RBRC,
-                  H,   J,   K,   L,   SCLN,QUOT,
-             FN1, N,   M,   COMM,DOT, SLSH,RSFT,
-                       LEFT,DOWN,UP,  RGHT,RGUI,
-        RALT,RCTL,
-        PGUP,
-        PGDN,ENT, SPC
+        CAPS, FN16, FN17, FN18, FN19, FN10, PAUS,
+        CAPS, J   , F   , U   , P   , LBRC, RBRC,
+              Y   , N   , E   , O   , I   , QUOT,
+        END , K   , L   , COMM, DOT , SLSH, MINS,
+                    LEFT, UP  , DOWN, RGHT, MINS,
+        RALT, HOME,
+        RGUI,
+        RCTL, FN22, FN1
     ),
 
     KEYMAP(  // layer 1 : function and symbol keys
         // left hand
-        TRNS,F1,  F2,  F3,  F4,  F5,  F11,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,FN4,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
+        F12 , F1  , F2  , F3  , F4  , F5  , TRNS,
+        FN0 , DEL , TRNS, TRNS, TRNS, TRNS, TRNS,
+        FN31, F10 , F2  , TRNS, F4  , TRNS,
+        FN5 , F9  , F8  , F6  , F5  , FN6 , PSCR,
+        FN5 , TRNS, TRNS, SPC , FN25,
+                                      MINS, F18 ,
                                            TRNS,
-                                 TRNS,TRNS,TRNS,
+                                F21 ,TRNS, BSPC,
         // right hand
-             F12, F6,  F7,  F8,  F9,  F10, TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,
+        TRNS, F6  , F7  , F8  , F9  , F10 , F11 ,
+        TRNS, TRNS, FN30, 9   , 8   , TRNS, TRNS,
+              2   , 1   , 0   , 7   , 6   , FN8 ,
+        PGDN, 3   , 4   , 5   , TRNS, TRNS, PPLS,
+                    HOME, PGUP, PGDN, END , PPLS,
+        TRNS, PGUP,
         TRNS,
-        TRNS,TRNS,TRNS
+        TRNS, FN23, TRNS
     ),
-
-    KEYMAP(  // layer 2 : keyboard functions
-        // left hand
-        FN0, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
-        // right hand
-             FN4, TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                       TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,
-        TRNS,
-        TRNS,TRNS,TRNS
-    ),
-
-    KEYMAP(  // layer 3: numpad
-        // left hand
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                 TRNS,TRNS,TRNS,
-        // right hand
-             SLCK,NLCK,PSLS,PAST,PAST,PMNS,BSPC,
-             TRNS,NO,  P7,  P8,  P9,  PMNS,BSPC,
-                  NO,  P4,  P5,  P6,  PPLS,PENT,
-             TRNS,NO,  P1,  P2,  P3,  PPLS,PENT,
-                       P0,  PDOT,SLSH,PENT,PENT,
-        TRNS,TRNS,
-        TRNS,
-        TRNS,TRNS,TRNS
-    ),
-
 };
 
 /* id for user defined functions */
@@ -183,11 +140,37 @@ enum function_id {
  * Fn action definition
  */
 static const uint16_t PROGMEM fn_actions[] = {
-    ACTION_FUNCTION(TEENSY_KEY),                    // FN0 - Teensy key
-    ACTION_LAYER_MOMENTARY(1),                      // FN1 - switch to Layer1
-    ACTION_LAYER_SET(2, ON_PRESS),                  // FN2 - push Layer2
-    ACTION_LAYER_SET(3, ON_PRESS),                  // FN3 - push Layer3
-    ACTION_LAYER_SET(0, ON_PRESS),                  // FN4 - push Layer0
+    [ 0] = ACTION_FUNCTION(TEENSY_KEY),                    // FN0  - Teensy key - reboot to programmator mode
+//  [ 1] = ACTION_LAYER_MOMENTARY(1),
+    [ 1] = ACTION_LAYER_TAP_KEY(1, KC_SPC),
+    [ 2] = ACTION_LAYER_TAP_KEY(1, KC_SCLN),
+    [ 3] = ACTION_LAYER_TAP_KEY(1, KC_H),
+
+    [ 5] = ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT, KC_0),
+    [ 6] = ACTION_MODS_KEY(MOD_LALT | MOD_LSFT, KC_V),
+    [ 7] = ACTION_MODS_KEY(MOD_LGUI, KC_Z),
+    [ 8] = ACTION_MODS_KEY(MOD_LSFT, KC_SCLN),
+
+    [10] = ACTION_MODS_KEY(MOD_LSFT, KC_0),
+    [11] = ACTION_MODS_KEY(MOD_LSFT, KC_1),
+    [12] = ACTION_MODS_KEY(MOD_LSFT, KC_2),
+    [13] = ACTION_MODS_KEY(MOD_LSFT, KC_3),
+    [14] = ACTION_MODS_KEY(MOD_LSFT, KC_4),
+    [15] = ACTION_MODS_KEY(MOD_LSFT, KC_5),
+    [16] = ACTION_MODS_KEY(MOD_LSFT, KC_6),
+    [17] = ACTION_MODS_KEY(MOD_LSFT, KC_7),
+    [18] = ACTION_MODS_KEY(MOD_LSFT, KC_8),
+    [19] = ACTION_MODS_KEY(MOD_LSFT, KC_9),
+
+    [20] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_EQL),
+    [21] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_F16),
+    [22] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSLS),
+    [23] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_F17),
+    [24] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_ENT),
+    [25] = ACTION_MODS_KEY(MOD_LGUI, KC_ENT),
+
+    [30] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_F), // ACTION_MACRO(JIRA_NOFORMAT),
+    [31] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_Q), // ACTION_MACRO(JIRA_QUOTE),
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
