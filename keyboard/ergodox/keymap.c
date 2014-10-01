@@ -91,19 +91,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(  // layer 0 : default
         // left hand
         ESC , FN11, FN12, FN13, FN14, FN15, CAPS,
-        GRV , BSPC, D   , R   , W   , B   , CAPS,
+        GRV , BSPC, D   , R   , W   , B   , FN5 ,
         Q   , A   , S   , FN3 , T   , G   ,
-        FN7 , Z   , X   , M   , C   , V   , INS ,
-        FN7 , LALT, FN20, TAB , FN24,
-                                      1   , 2   ,
-                                            GRV ,
-                                LSFT, FN2 , DEL ,
+        SCLN, Z   , X   , M   , C   , V   , INS ,
+        FN8 , LALT, FN20, TAB , FN24,
+                                      GRV , 2   ,
+                                            1   ,
+                                LSFT, DEL , FN7 , 
         // right hand
         CAPS, FN16, FN17, FN18, FN19, FN10, PAUS,
         CAPS, J   , F   , U   , P   , LBRC, RBRC,
               Y   , N   , E   , O   , I   , QUOT,
         END , K   , L   , COMM, DOT , SLSH, MINS,
-                    LEFT, UP  , DOWN, RGHT, MINS,
+                    LEFT, UP  , DOWN, RGHT, PPLS,
         RALT, HOME,
         RGUI,
         RCTL, FN22, FN1
