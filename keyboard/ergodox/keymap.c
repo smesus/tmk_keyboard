@@ -111,8 +111,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(  // layer 1 :
         // left hand
-        F12 , F1  , F2  , F3  , F4  , F5  , TRNS,
-        FN0 , DEL , TRNS, TRNS, TRNS, TRNS, TRNS,
+        F12 , F1  , F2  , F3  , F4  , F5  , FN0 ,
+        TRNS, DEL , TRNS, TRNS, TRNS, TRNS, TRNS,
         FN31, F10 , F2  , TRNS, F4  , TRNS,
         FN5 , F9  , F8  , F6  , F5  , FN6 , PSCR,
         TRNS, TRNS, TRNS, SPC , FN25,
