@@ -99,11 +99,11 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             1   ,
                                 LSFT, FN2 , FN7 , 
         // right hand
-        CAPS, FN16, FN17, FN18, FN19, FN10, PAUS,
-        CAPS, J   , F   , U   , P   , LBRC, RBRC,
+        FN4 , FN16, FN17, FN18, FN19, FN10, PAUS,
+        F7  , J   , F   , U   , P   , LBRC, RBRC,
               Y   , N   , E   , O   , I   , QUOT,
         END , K   , L   , COMM, DOT , SLSH, MINS,
-                    LEFT, UP  , DOWN, RGHT, PPLS,
+                    LEFT, UP  , DOWN, RGHT, FN8 ,
         RALT, HOME,
         RGUI,
         RCTL, FN22, FN1
@@ -115,16 +115,16 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN0 , DEL , TRNS, TRNS, TRNS, TRNS, TRNS,
         FN31, F10 , F2  , TRNS, F4  , TRNS,
         FN5 , F9  , F8  , F6  , F5  , FN6 , PSCR,
-        FN5 , TRNS, TRNS, SPC , FN25,
+        TRNS, TRNS, TRNS, SPC , FN25,
                                       MINS, F18 ,
                                             TRNS,
                                 FN21, TRNS, BSPC,
         // right hand
         TRNS, F6  , F7  , F8  , F9  , F10 , F11 ,
         TRNS, TRNS, FN30, 9   , 8   , TRNS, TRNS,
-              2   , 1   , 0   , 7   , 6   , FN8 ,
+              2   , 1   , 0   , 7   , 6   , TRNS,
         PGDN, 3   , 4   , 5   , TRNS, TRNS, PPLS,
-                    HOME, PGUP, PGDN, END , PPLS,
+                    HOME, PGUP, PGDN, END , TRNS,
         TRNS, PGUP,
         TRNS,
         TRNS, FN23, TRNS
@@ -145,11 +145,11 @@ static const uint16_t PROGMEM fn_actions[] = {
     [ 1] = ACTION_LAYER_TAP_KEY(1, KC_SPC),
     [ 2] = ACTION_LAYER_TAP_KEY(1, KC_DEL),
     [ 3] = ACTION_LAYER_TAP_KEY(1, KC_H),
-
+    [ 4] = ACTION_LAYER_TOGGLE(1),
     [ 5] = ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT, KC_0),
     [ 6] = ACTION_MODS_KEY(MOD_LALT | MOD_LSFT, KC_V),
     [ 7] = ACTION_MODS_KEY(MOD_LGUI, KC_Z),
-    [ 8] = ACTION_MODS_KEY(MOD_LSFT, KC_SCLN),
+    [ 8] = ACTION_MODS(MOD_LALT | MOD_LGUI | MOD_LCTL),
 
     [10] = ACTION_MODS_KEY(MOD_LSFT, KC_0),
     [11] = ACTION_MODS_KEY(MOD_LSFT, KC_1),
