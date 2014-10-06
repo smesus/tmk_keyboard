@@ -97,7 +97,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN8 , LALT, FN20, TAB , FN24,
                                       GRV , 2   ,
                                             1   ,
-                                LSFT, DEL , FN7 , 
+                                LSFT, FN2 , FN7 , 
         // right hand
         CAPS, FN16, FN17, FN18, FN19, FN10, PAUS,
         CAPS, J   , F   , U   , P   , LBRC, RBRC,
@@ -109,7 +109,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         RCTL, FN22, FN1
     ),
 
-    KEYMAP(  // layer 1 : function and symbol keys
+    KEYMAP(  // layer 1 :
         // left hand
         F12 , F1  , F2  , F3  , F4  , F5  , TRNS,
         FN0 , DEL , TRNS, TRNS, TRNS, TRNS, TRNS,
@@ -117,8 +117,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         FN5 , F9  , F8  , F6  , F5  , FN6 , PSCR,
         FN5 , TRNS, TRNS, SPC , FN25,
                                       MINS, F18 ,
-                                           TRNS,
-                                F21 ,TRNS, BSPC,
+                                            TRNS,
+                                FN21, TRNS, BSPC,
         // right hand
         TRNS, F6  , F7  , F8  , F9  , F10 , F11 ,
         TRNS, TRNS, FN30, 9   , 8   , TRNS, TRNS,
@@ -143,7 +143,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     [ 0] = ACTION_FUNCTION(TEENSY_KEY),                    // FN0  - Teensy key - reboot to programmator mode
 //  [ 1] = ACTION_LAYER_MOMENTARY(1),
     [ 1] = ACTION_LAYER_TAP_KEY(1, KC_SPC),
-    [ 2] = ACTION_LAYER_TAP_KEY(1, KC_SCLN),
+    [ 2] = ACTION_LAYER_TAP_KEY(1, KC_DEL),
     [ 3] = ACTION_LAYER_TAP_KEY(1, KC_H),
 
     [ 5] = ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT, KC_0),
