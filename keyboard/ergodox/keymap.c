@@ -91,20 +91,20 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(  // layer 0 : default
         // left hand
         NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-        GRV , BSPC, D   , R   , W   , B   , NO  ,
+        ESC , BSPC, D   , R   , W   , B   , NO  ,
         Q   , A   , S   , FN3 , T   , G   ,
-        SCLN, Z   , X   , M   , C   , V   , INS ,
-        FN8 , LALT, FN20, TAB , FN24,
+        FN8 , Z   , X   , M   , C   , V   , INS ,
+        NO  , LALT, FN20, TAB , FN24,
                                       GRV , 2   ,
                                             1   ,
-                                LSFT, FN2 , ESC , 
+                                FN4 , FN2 , FN7 , 
         // right hand
         NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
         NO  , J   , F   , U   , P   , LBRC, RBRC,
               Y   , N   , E   , O   , I   , QUOT,
-        END , K   , L   , COMM, DOT , SLSH, MINS,
-                    LEFT, UP  , DOWN, RGHT, FN8 ,
-        RALT, HOME,
+        HOME, K   , L   , COMM, DOT , SLSH, FN9,
+                    LEFT, UP  , DOWN, RGHT, NO  ,
+        RALT, END ,
         RGUI,
         RCTL, FN22, FN1
     ),
@@ -113,19 +113,19 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
         FN0 , DEL , F7  , F11 , F12 , F1  , NO  ,
-        FN31, F10 , F2  , TRNS, F4  , F3  ,
+        TRNS, F10 , F2  , TRNS, F4  , F3  ,
         FN5 , F9  , F8  , F6  , F5  , TRNS, PSCR,
-        TRNS, TRNS, TRNS, SPC , FN25,
-                                      MINS, F18 ,
+        TRNS, TRNS, TRNS, SPC , TRNS,
+                                      ESC , F18 ,
                                             TRNS,
-                                FN21, TRNS, FN7 ,
+                                FN21, TRNS, MINS,
         // right hand
         NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-        NO  , CAPS, FN30, 9   , 8   , TRNS, TRNS,
-              3   , 1   , 0   , 2   , 7   , TRNS,
-        PGDN, 6   , 4   , 5   , TRNS, TRNS, PPLS,
+        NO  , CAPS, TRNS, 4   , 5   , TRNS, TRNS,
+              3   , 1   , 0   , 2   , 7   , SCLN,
+        PGUP, 6   , 9   , 8   , TRNS, TRNS, PPLS,
                     HOME, PGUP, PGDN, END , TRNS,
-        TRNS, PGUP,
+        TRNS, PGDN,
         TRNS,
         TRNS, FN23, TRNS
     ),
@@ -141,15 +141,18 @@ enum function_id {
  */
 static const uint16_t PROGMEM fn_actions[] = {
     [ 0] = ACTION_FUNCTION(TEENSY_KEY),                    // FN0  - Teensy key - reboot to programmator mode
-//  [ 1] = ACTION_LAYER_MOMENTARY(1),
+    // [ 1] = ACTION_LAYER_MOMENTARY(1),
     [ 1] = ACTION_LAYER_TAP_KEY(1, KC_SPC),
     [ 2] = ACTION_LAYER_TAP_KEY(1, KC_DEL),
     [ 3] = ACTION_LAYER_TAP_KEY(1, KC_H),
     // [ 4] = ACTION_LAYER_TOGGLE(1),
-    [ 5] = ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT, KC_0),
+    [ 4] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_SCLN),
+    // [ 5] = ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT, KC_0),
     // [ 6] = ACTION_MODS_KEY(MOD_LALT | MOD_LSFT, KC_V),
-    [ 7] = ACTION_MODS_KEY(MOD_LGUI, KC_Z),
-    [ 8] = ACTION_MODS(MOD_LALT | MOD_LGUI | MOD_LCTL),
+    [ 7] = ACTION_MODS_KEY(MOD_LGUI, KC_Z), // UNDO shortcut
+    // [ 8] = ACTION_MODS(MOD_LALT | MOD_LGUI | MOD_LCTL),
+    [ 8] = ACTION_MODS_TAP_KEY(MOD_LALT | MOD_LGUI | MOD_LCTL, KC_GRV), // META combo MOD_LALT | MOD_LGUI | MOD_LCTL
+    [ 9] = ACTION_MODS_TAP_KEY(MOD_LALT | MOD_LGUI | MOD_LCTL, KC_MINS), // META combo MOD_LALT | MOD_LGUI | MOD_LCTL
 
     // [10] = ACTION_MODS_KEY(MOD_LSFT, KC_0),
     // [11] = ACTION_MODS_KEY(MOD_LSFT, KC_1),
@@ -162,15 +165,15 @@ static const uint16_t PROGMEM fn_actions[] = {
     // [18] = ACTION_MODS_KEY(MOD_LSFT, KC_8),
     // [19] = ACTION_MODS_KEY(MOD_LSFT, KC_9),
 
-    [20] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_EQL),
+    [20] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ENT),
     [21] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_F16),
     [22] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSLS),
     [23] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_F17),
-    [24] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_ENT),
-    [25] = ACTION_MODS_KEY(MOD_LGUI, KC_ENT),
+    [24] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_EQL),
+    // [25] = ACTION_MODS_KEY(MOD_LGUI, KC_ENT),
 
-    [30] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_F), // ACTION_MACRO(JIRA_NOFORMAT),
-    [31] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_Q), // ACTION_MACRO(JIRA_QUOTE),
+    // [30] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_F), // ACTION_MACRO(JIRA_NOFORMAT),
+    // [31] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_Q), // ACTION_MACRO(JIRA_QUOTE),
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
