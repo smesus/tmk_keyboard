@@ -91,7 +91,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(  // layer 0 : default
         // left hand
         NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-        ESC , BSPC, D   , R   , W   , B   , NO  ,
+        DEL , BSPC, D   , R   , W   , B   , NO  ,
         Q   , A   , S   , FN3 , T   , G   ,
         FN8 , Z   , X   , M   , C   , V   , INS ,
         NO  , LALT, FN20, TAB , FN24,
@@ -112,12 +112,12 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(  // layer 1 :
         // left hand
         NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-        FN0 , DEL , F7  , F11 , F12 , F1  , NO  ,
+        TRNS, DEL , F7  , F12 , F11 , F1  , NO  ,
         TRNS, F10 , F2  , TRNS, F4  , F3  ,
-        FN5 , F9  , F8  , F6  , F5  , TRNS, PSCR,
+        TRNS, F9  , F8  , F6  , F5  , TRNS, PSCR,
         TRNS, TRNS, TRNS, SPC , TRNS,
-                                      ESC , F18 ,
-                                            TRNS,
+                                      TRNS, F18 ,
+                                            FN0 ,
                                 FN21, TRNS, MINS,
         // right hand
         NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
@@ -143,15 +143,15 @@ static const uint16_t PROGMEM fn_actions[] = {
     [ 0] = ACTION_FUNCTION(TEENSY_KEY),                    // FN0  - Teensy key - reboot to programmator mode
     // [ 1] = ACTION_LAYER_MOMENTARY(1),
     [ 1] = ACTION_LAYER_TAP_KEY(1, KC_SPC),
-    [ 2] = ACTION_LAYER_TAP_KEY(1, KC_DEL),
+    [ 2] = ACTION_LAYER_TAP_KEY(1, KC_ESC),
     [ 3] = ACTION_LAYER_TAP_KEY(1, KC_H),
     // [ 4] = ACTION_LAYER_TOGGLE(1),
-    [ 4] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_SCLN),
+    [ 4] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_ENT),
     // [ 5] = ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT, KC_0),
     // [ 6] = ACTION_MODS_KEY(MOD_LALT | MOD_LSFT, KC_V),
     [ 7] = ACTION_MODS_KEY(MOD_LGUI, KC_Z), // UNDO shortcut
     // [ 8] = ACTION_MODS(MOD_LALT | MOD_LGUI | MOD_LCTL),
-    [ 8] = ACTION_MODS_TAP_KEY(MOD_LALT | MOD_LGUI | MOD_LCTL, KC_GRV), // META combo MOD_LALT | MOD_LGUI | MOD_LCTL
+    [ 8] = ACTION_MODS_TAP_KEY(MOD_LALT | MOD_LGUI | MOD_LCTL, KC_SCLN), // META combo MOD_LALT | MOD_LGUI | MOD_LCTL
     [ 9] = ACTION_MODS_TAP_KEY(MOD_LALT | MOD_LGUI | MOD_LCTL, KC_MINS), // META combo MOD_LALT | MOD_LGUI | MOD_LCTL
 
     // [10] = ACTION_MODS_KEY(MOD_LSFT, KC_0),
@@ -165,7 +165,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     // [18] = ACTION_MODS_KEY(MOD_LSFT, KC_8),
     // [19] = ACTION_MODS_KEY(MOD_LSFT, KC_9),
 
-    [20] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ENT),
+    [20] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_GRV),
     [21] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_F16),
     [22] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSLS),
     [23] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_F17),
