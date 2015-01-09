@@ -34,46 +34,34 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 /* ErgoDox keymap definition macro */
-#define KEYMAP(                                                 \
-                                                                \
-    /* left hand, spatial positions */                          \
-    k00,k01,k02,k03,k04,k05,k06,                                \
-    k10,k11,k12,k13,k14,k15,k16,                                \
-    k20,k21,k22,k23,k24,k25,                                    \
-    k30,k31,k32,k33,k34,k35,k36,                                \
-    k40,k41,k42,k43,k44,                                        \
-                            k55,k56,                            \
-                                k54,                            \
-                        k53,k52,k51,                            \
-                                                                \
-    /* right hand, spatial positions */                         \
-        k07,k08,k09,k0A,k0B,k0C,k0D,                            \
-        k17,k18,k19,k1A,k1B,k1C,k1D,                            \
-            k28,k29,k2A,k2B,k2C,k2D,                            \
-        k37,k38,k39,k3A,k3B,k3C,k3D,                            \
-                k49,k4A,k4B,k4C,k4D,                            \
-    k57,k58,                                                    \
-    k59,                                                        \
-    k5C,k5B,k5A )                                               \
-                                                                \
-   /* matrix positions */                                       \
-   {                                                            \
-    { KC_##k00,KC_##k10,KC_##k20,KC_##k30,KC_##k40,KC_NO   },   \
-    { KC_##k01,KC_##k11,KC_##k21,KC_##k31,KC_##k41,KC_##k51},   \
-    { KC_##k02,KC_##k12,KC_##k22,KC_##k32,KC_##k42,KC_##k52},   \
-    { KC_##k03,KC_##k13,KC_##k23,KC_##k33,KC_##k43,KC_##k53},   \
-    { KC_##k04,KC_##k14,KC_##k24,KC_##k34,KC_##k44,KC_##k54},   \
-    { KC_##k05,KC_##k15,KC_##k25,KC_##k35,KC_NO,   KC_##k55},   \
-    { KC_##k06,KC_##k16,KC_NO,   KC_##k36,KC_NO,   KC_##k56},   \
-                                                                \
-    { KC_##k07,KC_##k17,KC_NO,   KC_##k37,KC_NO,   KC_##k57},   \
-    { KC_##k08,KC_##k18,KC_##k28,KC_##k38,KC_NO,   KC_##k58},   \
-    { KC_##k09,KC_##k19,KC_##k29,KC_##k39,KC_##k49,KC_##k59},   \
-    { KC_##k0A,KC_##k1A,KC_##k2A,KC_##k3A,KC_##k4A,KC_##k5A},   \
-    { KC_##k0B,KC_##k1B,KC_##k2B,KC_##k3B,KC_##k4B,KC_##k5B},   \
-    { KC_##k0C,KC_##k1C,KC_##k2C,KC_##k3C,KC_##k4C,KC_##k5C},   \
-    { KC_##k0D,KC_##k1D,KC_##k2D,KC_##k3D,KC_##k4D,KC_NO   }    \
-   }
+#define KEYMAP(                                                                          \
+                                                                                         \
+    /* spatial positions */                                                              \
+    k00,k01,k02,k03,k04,k05,k06,                            k07,k08,k09,k0A,k0B,k0C,k0D, \
+    k10,k11,k12,k13,k14,k15,k16,                            k17,k18,k19,k1A,k1B,k1C,k1D, \
+    k20,k21,k22,k23,k24,k25,                                    k28,k29,k2A,k2B,k2C,k2D, \
+    k30,k31,k32,k33,k34,k35,k36,    k55,k56,    k57,k58,    k37,k38,k39,k3A,k3B,k3C,k3D, \
+    k40,k41,k42,k43,k44,        k53,k52,k54,    k59,k5B,k5A,        k49,k4A,k4B,k4C,k4D, \
+                                        k51,    k5C                                      \
+   )                                                                                     \
+   /* matrix positions */                                                                \
+   {                                                                                     \
+    { KC_##k00,KC_##k10,KC_##k20,KC_##k30,KC_##k40,KC_NO   },                            \
+    { KC_##k01,KC_##k11,KC_##k21,KC_##k31,KC_##k41,KC_##k51},                            \
+    { KC_##k02,KC_##k12,KC_##k22,KC_##k32,KC_##k42,KC_##k52},                            \
+    { KC_##k03,KC_##k13,KC_##k23,KC_##k33,KC_##k43,KC_##k53},                            \
+    { KC_##k04,KC_##k14,KC_##k24,KC_##k34,KC_##k44,KC_##k54},                            \
+    { KC_##k05,KC_##k15,KC_##k25,KC_##k35,KC_NO,   KC_##k55},                            \
+    { KC_##k06,KC_##k16,KC_NO,   KC_##k36,KC_NO,   KC_##k56},                            \
+                                                                                         \
+    { KC_##k07,KC_##k17,KC_NO,   KC_##k37,KC_NO,   KC_##k57},                            \
+    { KC_##k08,KC_##k18,KC_##k28,KC_##k38,KC_NO,   KC_##k58},                            \
+    { KC_##k09,KC_##k19,KC_##k29,KC_##k39,KC_##k49,KC_##k59},                            \
+    { KC_##k0A,KC_##k1A,KC_##k2A,KC_##k3A,KC_##k4A,KC_##k5A},                            \
+    { KC_##k0B,KC_##k1B,KC_##k2B,KC_##k3B,KC_##k4B,KC_##k5B},                            \
+    { KC_##k0C,KC_##k1C,KC_##k2C,KC_##k3C,KC_##k4C,KC_##k5C},                            \
+    { KC_##k0D,KC_##k1D,KC_##k2D,KC_##k3D,KC_##k4D,KC_NO   }                             \
+   }  
 
 #if defined(KEYMAP_DVORAK)
 #include "keymap_dvorak.h"
@@ -88,47 +76,45 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #else
 
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    KEYMAP(  // layer 0 : default
-        // left hand
-        NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-        DEL , BSPC, D   , R   , W   , B   , NO  ,
-        Q   , A   , S   , FN3 , T   , G   ,
-        FN8 , Z   , X   , M   , C   , V   , INS ,
-        NO  , LALT, FN20, TAB , FN24,
-                                      GRV , 2   ,
-                                            1   ,
-                                FN4 , FN2 , FN7 , 
-        // right hand
-        NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-        NO  , J   , F   , U   , P   , LBRC, RBRC,
-              Y   , N   , E   , O   , I   , QUOT,
-        HOME, K   , L   , COMM, DOT , SLSH, FN9,
-                    LEFT, UP  , DOWN, RGHT, NO  ,
-        RALT, END ,
-        RGUI,
-        RCTL, FN22, FN1
-    ),
+// Layer0
+KEYMAP(
+    NO  , NO  , NO  , NO  , NO  , NO  , NO  ,                                           NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
+    DEL , BSPC, D   , R   , W   , B   , NO  ,                                           NO  , J   , F   , U   , P   , LBRC, RBRC,
+    Q   , A   , S   , FN3 , T   , G   ,                                                       Y   , N   , E   , O   , I   , QUOT,
+    FN8 , Z   , X   , M   , C   , V   , INS ,       GRV , 2   ,       RALT, END ,       HOME, K   , L   , COMM, DOT , SLSH, FN9 ,
+    NO  , LALT, FN20, TAB , FN24,             FN4 , FN2 , 1   ,       RGUI, FN22, FN1 ,            LEFT, UP  , DOWN, RGHT, NO  ,
+                                                          FN7 ,       RCTL
+),
 
-    KEYMAP(  // layer 1 :
-        // left hand
-        NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-        TRNS, DEL , F7  , F12 , F11 , F1  , NO  ,
-        TRNS, F10 , F2  , TRNS, F4  , F3  ,
-        TRNS, F9  , F8  , F6  , F5  , TRNS, PSCR,
-        TRNS, TRNS, TRNS, SPC , TRNS,
-                                      TRNS, F18 ,
-                                            FN0 ,
-                                FN21, TRNS, MINS,
-        // right hand
-        NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-        NO  , CAPS, TRNS, 4   , 5   , TRNS, TRNS,
-              3   , 1   , 0   , 2   , 7   , EQL ,
-        PGUP, 6   , 9   , 8   , TRNS, TRNS, PPLS,
-                    HOME, PGUP, PGDN, END , TRNS,
-        TRNS, PGDN,
-        TRNS,
-        TRNS, FN23, TRNS
-    ),
+// Layer1 - original Kinesis
+KEYMAP(
+    EQL , 0   , 1   , 2   , 3   , 4   , NO  ,                                           NO  , 5   , 6   , 7   , 8   , 9   , MINS,
+    TAB , Q   , W   , E   , R   , T   , NO  ,                                           NO  , Y   , U   , I   , O   , P   , BSLS,
+    CAPS, A   , S   , D   , F   , G   ,                                                       H   , J   , K   , L   , SCLN, QUOT,
+    LSFT, Z   , X   , C   , V   , B   , NO  ,       LCTL, LALT,       RGUI, RCTL,       NO  , N   , M   , COMM, DOT , SLSH, RSFT,
+    NO  , GRV , BSLS, LEFT, RGHT,             BSPC, DEL , HOME,       PGUP, ENT , FN1 ,             UP  , DOWN, LBRC, RBRC, NO  ,
+                                                          END ,       PGDN
+),
+
+// Layer2
+KEYMAP(
+    NO  , NO  , NO  , NO  , NO  , NO  , NO  ,                                           NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
+    TRNS, TRNS, F7  , F12 , F11 , F1  , NO  ,                                           NO  , TRNS, TRNS, 4   , 5   , TRNS, TRNS,
+    TRNS, F10 , F2  , TRNS, F4  , F3  ,                                                       3   , 1   , 0   , 2   , 7   , EQL ,
+    TRNS, F9  , F8  , F6  , F5  , TRNS, PSCR,       TRNS, F18 ,       TRNS, PGDN,       PGUP, 6   , 9   , 8   , TRNS, TRNS, PPLS,
+    NO  , TRNS, TRNS, SPC , TRNS,             FN21, TRNS, FN0 ,       TRNS, FN23, TRNS,             HOME, PGUP, PGDN, END , NO  ,
+                                                          MINS,       TRNS
+),
+// Layer3
+KEYMAP(
+    NO  , NO  , NO  , NO  , NO  , NO  , NO  ,                                           NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
+    TRNS, TRNS, F7  , F12 , F11 , F1  , NO  ,                                           NO  , TRNS, TRNS, FN14, FN15, TRNS, TRNS,
+    FN31, F10 , F2  , TRNS, F4  , F3  ,                                                       FN13, FN11, FN10, FN12, FN17, EQL ,
+    TRNS, F9  , F8  , F6  , F5  , TRNS, PSCR,       TRNS, F18 ,       TRNS, PGDN,       PGUP, FN16, FN19, FN18, TRNS, TRNS, PPLS,
+    NO  , TRNS, TRNS, SPC , TRNS,             FN21, TRNS, FN0 ,       TRNS, FN23, TRNS,             HOME, PGUP, PGDN, END , NO  ,
+                                                          MINS,       TRNS
+),
+
 };
 
 /* id for user defined functions */
@@ -142,9 +128,9 @@ enum function_id {
 static const uint16_t PROGMEM fn_actions[] = {
     [ 0] = ACTION_FUNCTION(TEENSY_KEY),                    // FN0  - Teensy key - reboot to programmator mode
     // [ 1] = ACTION_LAYER_MOMENTARY(1),
-    [ 1] = ACTION_LAYER_TAP_KEY(1, KC_SPC),
-    [ 2] = ACTION_LAYER_TAP_KEY(1, KC_ESC),
-    [ 3] = ACTION_LAYER_TAP_KEY(1, KC_H),
+    [ 1] = ACTION_LAYER_TAP_KEY(3, KC_SPC),
+    [ 2] = ACTION_LAYER_TAP_KEY(2, KC_ESC),
+    [ 3] = ACTION_LAYER_TAP_KEY(2, KC_H),
     // [ 4] = ACTION_LAYER_TOGGLE(1),
     [ 4] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_ENT),
     // [ 5] = ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT, KC_0),
@@ -154,16 +140,16 @@ static const uint16_t PROGMEM fn_actions[] = {
     [ 8] = ACTION_MODS_TAP_KEY(MOD_LALT | MOD_LGUI | MOD_LCTL, KC_SCLN), // META combo MOD_LALT | MOD_LGUI | MOD_LCTL
     [ 9] = ACTION_MODS_TAP_KEY(MOD_LALT | MOD_LGUI | MOD_LCTL, KC_MINS), // META combo MOD_LALT | MOD_LGUI | MOD_LCTL
 
-    // [10] = ACTION_MODS_KEY(MOD_LSFT, KC_0),
-    // [11] = ACTION_MODS_KEY(MOD_LSFT, KC_1),
-    // [12] = ACTION_MODS_KEY(MOD_LSFT, KC_2),
-    // [13] = ACTION_MODS_KEY(MOD_LSFT, KC_3),
-    // [14] = ACTION_MODS_KEY(MOD_LSFT, KC_4),
-    // [15] = ACTION_MODS_KEY(MOD_LSFT, KC_5),
-    // [16] = ACTION_MODS_KEY(MOD_LSFT, KC_6),
-    // [17] = ACTION_MODS_KEY(MOD_LSFT, KC_7),
-    // [18] = ACTION_MODS_KEY(MOD_LSFT, KC_8),
-    // [19] = ACTION_MODS_KEY(MOD_LSFT, KC_9),
+    [10] = ACTION_MODS_KEY(MOD_LSFT, KC_0),
+    [11] = ACTION_MODS_KEY(MOD_LSFT, KC_1),
+    [12] = ACTION_MODS_KEY(MOD_LSFT, KC_2),
+    [13] = ACTION_MODS_KEY(MOD_LSFT, KC_3),
+    [14] = ACTION_MODS_KEY(MOD_LSFT, KC_4),
+    [15] = ACTION_MODS_KEY(MOD_LSFT, KC_5),
+    [16] = ACTION_MODS_KEY(MOD_LSFT, KC_6),
+    [17] = ACTION_MODS_KEY(MOD_LSFT, KC_7),
+    [18] = ACTION_MODS_KEY(MOD_LSFT, KC_8),
+    [19] = ACTION_MODS_KEY(MOD_LSFT, KC_9),
 
     [20] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_GRV),
     [21] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_F16),
@@ -172,8 +158,10 @@ static const uint16_t PROGMEM fn_actions[] = {
     [24] = ACTION_MODS_ONESHOT(MOD_LGUI),
     // [25] = ACTION_MODS_KEY(MOD_LGUI, KC_ENT),
 
+    // [29] = ACTION_MACRO(C_COMMENT),
     // [30] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_F), // ACTION_MACRO(JIRA_NOFORMAT),
     // [31] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_Q), // ACTION_MACRO(JIRA_QUOTE),
+    [31] = ACTION_LAYER_TOGGLE(1),
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
