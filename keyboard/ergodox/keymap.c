@@ -122,7 +122,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
         NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
         NO  , CAPS, TRNS, 4   , 5   , TRNS, TRNS,
-              3   , 1   , 0   , 2   , 7   , SCLN,
+              3   , 1   , 0   , 2   , 7   , EQL ,
         PGUP, 6   , 9   , 8   , TRNS, TRNS, PPLS,
                     HOME, PGUP, PGDN, END , TRNS,
         TRNS, PGDN,
@@ -169,7 +169,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     [21] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_F16),
     [22] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSLS),
     [23] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_F17),
-    [24] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_EQL),
+    [24] = ACTION_MODS_ONESHOT(MOD_LGUI),
     // [25] = ACTION_MODS_KEY(MOD_LGUI, KC_ENT),
 
     // [30] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_F), // ACTION_MACRO(JIRA_NOFORMAT),
