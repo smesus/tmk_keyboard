@@ -75,93 +75,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "keymap_cub.h"
 #else
 
-static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-// Layer0
-KEYMAP(
-    NO  , NO  , NO  , NO  , NO  , NO  , NO  ,                                           NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-    DEL , BSPC, D   , R   , W   , B   , NO  ,                                           NO  , J   , F   , U   , P   , LBRC, RBRC,
-    Q   , A   , S   , FN3 , T   , G   ,                                                       Y   , N   , E   , O   , I   , QUOT,
-    FN8 , Z   , X   , M   , C   , V   , INS ,       GRV , 2   ,       RALT, END ,       HOME, K   , L   , COMM, DOT , SLSH, FN9 ,
-    NO  , LALT, FN20, TAB , FN24,             FN4 , FN2 , 1   ,       RGUI, FN22, FN1 ,            LEFT, UP  , DOWN, RGHT, NO  ,
-                                                          FN7 ,       RCTL
-),
-
-// Layer1 - original Kinesis
-KEYMAP(
-    EQL , 0   , 1   , 2   , 3   , 4   , NO  ,                                           NO  , 5   , 6   , 7   , 8   , 9   , MINS,
-    TAB , Q   , W   , E   , R   , T   , NO  ,                                           NO  , Y   , U   , I   , O   , P   , BSLS,
-    CAPS, A   , S   , D   , F   , G   ,                                                       H   , J   , K   , L   , SCLN, QUOT,
-    LSFT, Z   , X   , C   , V   , B   , NO  ,       LCTL, LALT,       RGUI, RCTL,       NO  , N   , M   , COMM, DOT , SLSH, RSFT,
-    NO  , GRV , BSLS, LEFT, RGHT,             BSPC, DEL , HOME,       PGUP, ENT , FN1 ,             UP  , DOWN, LBRC, RBRC, NO  ,
-                                                          END ,       PGDN
-),
-
-// Layer2
-KEYMAP(
-    NO  , NO  , NO  , NO  , NO  , NO  , NO  ,                                           NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-    TRNS, TRNS, F7  , F12 , F11 , F1  , NO  ,                                           NO  , TRNS, TRNS, 4   , 5   , TRNS, TRNS,
-    TRNS, F10 , F2  , TRNS, F4  , F3  ,                                                       3   , 1   , 0   , 2   , 7   , EQL ,
-    TRNS, F9  , F8  , F6  , F5  , TRNS, PSCR,       TRNS, F18 ,       TRNS, PGDN,       PGUP, 6   , 9   , 8   , TRNS, TRNS, PPLS,
-    NO  , TRNS, TRNS, SPC , TRNS,             FN21, TRNS, FN0 ,       TRNS, FN23, TRNS,             HOME, PGUP, PGDN, END , NO  ,
-                                                          MINS,       TRNS
-),
-// Layer3
-KEYMAP(
-    NO  , NO  , NO  , NO  , NO  , NO  , NO  ,                                           NO  , NO  , NO  , NO  , NO  , NO  , NO  ,
-    TRNS, TRNS, F7  , F12 , F11 , F1  , NO  ,                                           NO  , TRNS, TRNS, FN14, FN15, TRNS, TRNS,
-    FN31, F10 , F2  , TRNS, F4  , F3  ,                                                       FN13, FN11, FN10, FN12, FN17, EQL ,
-    TRNS, F9  , F8  , F6  , F5  , TRNS, PSCR,       TRNS, F18 ,       TRNS, PGDN,       PGUP, FN16, FN19, FN18, TRNS, TRNS, PPLS,
-    NO  , TRNS, TRNS, SPC , TRNS,             FN21, TRNS, FN0 ,       TRNS, FN23, TRNS,             HOME, PGUP, PGDN, END , NO  ,
-                                                          MINS,       TRNS
-),
-
-};
 
 /* id for user defined functions */
 enum function_id {
     TEENSY_KEY,
-};
-
-/*
- * Fn action definition
- */
-static const uint16_t PROGMEM fn_actions[] = {
-    [ 0] = ACTION_FUNCTION(TEENSY_KEY),                    // FN0  - Teensy key - reboot to programmator mode
-    // [ 1] = ACTION_LAYER_MOMENTARY(1),
-    [ 1] = ACTION_LAYER_TAP_KEY(3, KC_SPC),
-    [ 2] = ACTION_LAYER_TAP_KEY(2, KC_ESC),
-    [ 3] = ACTION_LAYER_TAP_KEY(2, KC_H),
-    // [ 4] = ACTION_LAYER_TOGGLE(1),
-    [ 4] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_ENT),
-    // [ 5] = ACTION_MODS_KEY(MOD_LGUI | MOD_LSFT, KC_0),
-    // [ 6] = ACTION_MODS_KEY(MOD_LALT | MOD_LSFT, KC_V),
-    [ 7] = ACTION_MODS_KEY(MOD_LGUI, KC_Z), // UNDO shortcut
-    // [ 8] = ACTION_MODS(MOD_LALT | MOD_LGUI | MOD_LCTL),
-    [ 8] = ACTION_MODS_TAP_KEY(MOD_LALT | MOD_LGUI | MOD_LCTL, KC_SCLN), // META combo MOD_LALT | MOD_LGUI | MOD_LCTL
-    [ 9] = ACTION_MODS_TAP_KEY(MOD_LALT | MOD_LGUI | MOD_LCTL, KC_MINS), // META combo MOD_LALT | MOD_LGUI | MOD_LCTL
-
-    [10] = ACTION_MODS_KEY(MOD_LSFT, KC_0),
-    [11] = ACTION_MODS_KEY(MOD_LSFT, KC_1),
-    [12] = ACTION_MODS_KEY(MOD_LSFT, KC_2),
-    [13] = ACTION_MODS_KEY(MOD_LSFT, KC_3),
-    [14] = ACTION_MODS_KEY(MOD_LSFT, KC_4),
-    [15] = ACTION_MODS_KEY(MOD_LSFT, KC_5),
-    [16] = ACTION_MODS_KEY(MOD_LSFT, KC_6),
-    [17] = ACTION_MODS_KEY(MOD_LSFT, KC_7),
-    [18] = ACTION_MODS_KEY(MOD_LSFT, KC_8),
-    [19] = ACTION_MODS_KEY(MOD_LSFT, KC_9),
-
-    [20] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_GRV),
-    [21] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_F16),
-    [22] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSLS),
-    [23] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_F17),
-    [24] = ACTION_MODS_ONESHOT(MOD_LGUI),
-    // [25] = ACTION_MODS_KEY(MOD_LGUI, KC_ENT),
-
-    // [29] = ACTION_MACRO(C_COMMENT),
-    // [30] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_F), // ACTION_MACRO(JIRA_NOFORMAT),
-    // [31] = ACTION_MODS_KEY(MOD_LCTL|MOD_LALT|MOD_LGUI, KC_Q), // ACTION_MACRO(JIRA_QUOTE),
-    [31] = ACTION_LAYER_TOGGLE(1),
 };
 
 void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
@@ -177,6 +94,97 @@ void action_function(keyrecord_t *event, uint8_t id, uint8_t opt)
 
 #endif
 
+////////////////////////////////////////////////////////////////////////////
+
+// ERGODOX keymaps. Rendered automatically in https://docs.google.com/spreadsheets/d/1UNBirTlrECQJ08_CumkZXu8rqGTfGoYYeWQ7XA4az-4/edit
+static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+
+// Layer0
+KEYMAP(
+
+    MINS, 1   , 2   , NO  , NO  , NO  , NO  ,                               NO  , NO  , NO  , NO  , VOLD, VOLU, MUTE,
+    ESC , BSPC, D   , R   , W   , B   , NO  ,                               NO  , J   , F   , U   , P   , EQL , PAST,
+    Q   , A   , S   , H   , T   , G   ,                                           Y   , N   , E   , O   , I   , QUOT,
+    F19 , Z   , X   , M   , C   , V   , NO  , NO  , NO  ,       NO  , NO  , NO  , K   , L   , COMM, DOT , SLSH, MINS,
+    NO  , GRV , FN22, FN21, FN20,       FN24, FN2 , NO  ,       NO  , FN31, FN1 ,       FN25, FN27, FN29, RGHT, NO  ,
+                                                    PSCR,       F18 
+),
+
+// Layer1
+KEYMAP(
+
+    TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, NO  ,                               NO  , TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+    TRNS, DEL , 7   , 4   , F17 , F16 , NO  ,                               NO  , F14 , F15 , F4  , F8  , TRNS, TRNS,
+    TRNS, 3   , 9   , 0   , SPC , LBRC,                                           F12 , F7  , F10 , F9  , F3  , TRNS,
+    TRNS, 6   , 1   , 5   , 2   , RBRC, NO  , TRNS, TRNS,       TRNS, TRNS, NO  , SCLN, F2  , F5  , F11 , F6  , TRNS,
+    NO  , TRNS, TRNS, TRNS, TRNS,       FN23, TRNS, TRNS,       FN0 , TRNS, TRNS,       FN26, FN28, FN30, END , NO  ,
+                                                    TRNS,       TRNS
+),
+
+// Layer2
+KEYMAP(
+
+    TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, NO  ,                               NO  , TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+    TRNS, TRNS, F7  , F4  , F15 , F14 , NO  ,                               NO  , F16 , F17 , 4   , 7   , TRNS, TRNS,
+    SPC , F3  , F9  , F10 , F7  , F12 ,                                           TRNS, 8   , 0   , 9   , 3   , TRNS,
+    TRNS, F6  , F11 , F5  , F2  , PSCR, NO  , TRNS, TRNS,       TRNS, TRNS, NO  , TRNS, 2   , 5   , 1   , 6   , TRNS,
+    NO  , TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, NO  ,
+                                                    TRNS,       TRNS
+),
+
+// Layer3 - original Kinesis
+KEYMAP(
+
+    EQL , 1   , 2   , 3   , 4   , 5   , NO  ,                               NO  , 6   , 7   , 8   , 9   , 0   , MINS,
+    TAB , Q   , W   , E   , R   , T   , NO  ,                               NO  , Y   , U   , I   , O   , P   , BSLS,
+    FN3 , A   , S   , D   , F   , G   ,                                           H   , J   , K   , L   , SCLN, QUOT,
+    LSFT, Z   , X   , C   , V   , B   , NO  , LCTL, LALT,       RGUI, RCTL, NO  , N   , M   , COMM, DOT , SLSH, RSFT,
+    NO  , GRV , INS , LEFT, RGHT,       BSPC, DEL , HOME,       PGUP, ENT , SPC ,       UP  , DOWN, LBRC, RBRC, NO  ,
+                                                    END ,       PGDN
+),
+
+};
+
+/*
+ * Fn action definition
+ */
+static const uint16_t PROGMEM fn_actions[] = {
+    [ 0] = ACTION_FUNCTION(TEENSY_KEY),
+    [ 1] = ACTION_LAYER_TAP_KEY(1, KC_SPC),
+    [ 2] = ACTION_LAYER_TAP_KEY(2, KC_DEL),
+    [ 3] = ACTION_LAYER_TOGGLE(3),
+//  [ 4] = ,
+//  [ 5] = ,
+//  [ 6] = ,
+//  [ 7] = ,
+//  [ 8] = ,
+//  [ 9] = ,
+//  [10] = ,
+//  [11] = ,
+//  [12] = ,
+//  [13] = ,
+//  [14] = ,
+//  [15] = ,
+//  [16] = ,
+//  [17] = ,
+//  [18] = ,
+//  [19] = ,
+    [20] = ACTION_MODS_ONESHOT(MOD_LGUI),
+    [21] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_TAB),
+    [22] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_INS),
+    [23] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_8),
+    [24] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_ENT),
+    [25] = ACTION_MODS_TAP_KEY(MOD_RGUI, KC_LEFT),
+    [26] = ACTION_MODS_TAP_KEY(MOD_RGUI, KC_HOME),
+    [27] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_UP),
+    [28] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_PGUP),
+    [29] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_DOWN),
+    [30] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_PGDN),
+    [31] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSLS),
+};
+
+
+////////////////////////////////////////////////////////////////////////////
 
 #define KEYMAPS_SIZE    (sizeof(keymaps) / sizeof(keymaps[0]))
 #define FN_ACTIONS_SIZE (sizeof(fn_actions) / sizeof(fn_actions[0]))
@@ -209,4 +217,3 @@ action_t keymap_fn_to_action(uint8_t keycode)
     return action;
 }
 #endif
-
