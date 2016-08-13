@@ -118,40 +118,39 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 }
 
 ////////////////////////////////////////////////////////////////////////////
-
 // MOT keymaps. Rendered automatically in https://docs.google.com/spreadsheets/d/1UNBirTlrECQJ08_CumkZXu8rqGTfGoYYeWQ7XA4az-4/edit
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Layer0
 KEYMAP(
     NO  , NO  , NO  , NO  , NO  , NO  ,                                           NO  , NO  , NO  , NO  , NO  , NO  ,
-    MINS, 1   , 2   , NO  , NO  , NO  ,                                           NO  , NO  , NO  , VOLD, VOLU, MUTE,
-    ESC , BSPC, D   , R   , W   , B   ,                                           J   , F   , U   , P   , EQL , PAST,
+    ESC , DEL , PSLS, APP , PMNS, PEQL,                                           LBRC, RBRC, RALT, RCTL, BSLS, VOLU,
+    PDOT, BSPC, D   , R   , W   , B   ,                                           J   , F   , U   , P   , EQL , VOLD,
     Q   , A   , S   , H   , T   , G   ,                                           Y   , N   , E   , O   , I   , QUOT,
-    F19 , Z   , X   , M   , C   , V   , NO  , NO  , NO  ,       NO  , NO  , NO  , K   , L   , COMM, DOT , SLSH, MINS,
-          GRV , FN22, FN21, FN20,       FN24, FN2 , NO  ,       NO  , FN31, FN1 ,       FN25, FN27, FN29, RGHT,
-                                                    PSCR,       F18 
+    BSLS, Z   , X   , M   , C   , V   , NO  , SPC , F15 ,       F18 , F19 , NO  , K   , L   , COMM, DOT , SLSH, MINS,
+          FN24, FN23, FN22, FN21,       FN20, FN25, F14 ,       F17 , FN31, FN1 ,       LEFT, UP  , DOWN, RGHT,
+                                                    FN26,       F16 
 ),
 
 // Layer1
 KEYMAP(
     NO  , NO  , NO  , NO  , NO  , NO  ,                                           NO  , NO  , NO  , NO  , NO  , NO  ,
-    TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,                                           TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
-    TRNS, DEL , 7   , 4   , F17 , F16 ,                                           F14 , F15 , F4  , F8  , TRNS, TRNS,
-    TRNS, 3   , 9   , 0   , SPC , LBRC,                                           F12 , F7  , F10 , F9  , F3  , TRNS,
-    TRNS, 6   , 1   , 5   , 2   , RBRC, NO  , TRNS, TRNS,       TRNS, TRNS, NO  , SCLN, F2  , F5  , F11 , F6  , TRNS,
-          TRNS, TRNS, TRNS, TRNS,       FN23, TRNS, TRNS,       FN0 , TRNS, TRNS,       FN26, FN28, FN30, END ,
+    P1  , P2  , P3  , P4  , P5  , P6  ,                                           P7  , P8  , TRNS, TRNS, P9  , P0  ,
+    EJCT, DEL , F11 , F12 , TRNS, TRNS,                                           TRNS,  F1 , LBRC, RBRC, PPLS, MUTE,
+    TRNS, 8   , 6   , 9   , 5   , 7   ,                                           3   , 1   , 0   , 2   , 4   , ENT ,
+    PPLS, F8  , F6  , F9  , F5  , F7  , NO  , TRNS, TRNS,       TRNS, FN0 , NO  , F3  , SCLN, F10 , F2  , F4  , BSLS,
+          TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, CAPS,       FN0 , TRNS, TRNS,       HOME, PGUP, PGDN, END ,
                                                     TRNS,       TRNS
 ),
 
 // Layer2
 KEYMAP(
     NO  , NO  , NO  , NO  , NO  , NO  ,                                           NO  , NO  , NO  , NO  , NO  , NO  ,
+    NLCK, TRNS, TRNS, TRNS, TRNS, TRNS,                                           TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+    PWR , TRNS, TRNS, TRNS, TRNS, TRNS,                                           TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
     TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,                                           TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
-    TRNS, TRNS, F7  , F4  , F15 , F14 ,                                           F16 , F17 , 4   , 7   , TRNS, TRNS,
-    SPC , F3  , F9  , F10 , F7  , F12 ,                                           TRNS, 8   , 0   , 9   , 3   , TRNS,
-    TRNS, F6  , F11 , F5  , F2  , PSCR, NO  , TRNS, TRNS,       TRNS, TRNS, NO  , TRNS, 2   , 5   , 1   , 6   , TRNS,
-          TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS,
+    TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, NO  , MPRV, MNXT,       TRNS, TRNS, NO  , TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+          TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, MPLY,       APP , TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS,
                                                     TRNS,       TRNS
 ),
 
@@ -174,7 +173,7 @@ KEYMAP(
 static const uint16_t PROGMEM fn_actions[] = {
     [ 0] = ACTION_FUNCTION(TEENSY_KEY),
     [ 1] = ACTION_LAYER_TAP_KEY(1, KC_SPC),
-    [ 2] = ACTION_LAYER_TAP_KEY(2, KC_DEL),
+//  [ 2] = ,
     [ 3] = ACTION_LAYER_TOGGLE(3),
 //  [ 4] = ,
 //  [ 5] = ,
@@ -192,18 +191,18 @@ static const uint16_t PROGMEM fn_actions[] = {
 //  [17] = ,
 //  [18] = ,
 //  [19] = ,
-    [20] = ACTION_MODS_ONESHOT(MOD_LGUI),
-    [21] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_TAB),
-    [22] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_INS),
-    [23] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_8),
-    [24] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_ENT),
-    [25] = ACTION_MODS_TAP_KEY(MOD_RGUI, KC_LEFT),
-    [26] = ACTION_MODS_TAP_KEY(MOD_RGUI, KC_HOME),
-    [27] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_UP),
-    [28] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_PGUP),
-    [29] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_DOWN),
-    [30] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_PGDN),
-    [31] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSLS),
+    [20] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_INS),
+    [21] = ACTION_MODS_ONESHOT(MOD_LGUI),
+    [22] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_TAB),
+    [23] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),
+    [24] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_GRV),
+    [25] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ENT),
+    [26] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_F13),
+//  [27] = ,
+//  [28] = ,
+//  [29] = ,
+//  [30] = ,
+    [31] = ACTION_MODS_TAP_KEY(MOD_RGUI, KC_PAST),
 };
 
 ////////////////////////////////////////////////////////////////////////////
