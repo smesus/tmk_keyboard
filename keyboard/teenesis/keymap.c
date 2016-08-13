@@ -127,9 +127,9 @@ KEYMAP(
     ESC , DEL , PSLS, APP , PMNS, PEQL,                                           LBRC, RBRC, RALT, RCTL, BSLS, VOLU,
     PDOT, BSPC, D   , R   , W   , B   ,                                           J   , F   , U   , P   , EQL , VOLD,
     Q   , A   , S   , H   , T   , G   ,                                           Y   , N   , E   , O   , I   , QUOT,
-    PPLS, Z   , X   , M   , C   , V   ,       SPC , F15 ,       F18 , F19 ,       K   , L   , COMM, DOT , SLSH, MINS,
-          FN24, FN23, FN22, FN21,       FN20, ENT , F14 ,       F17 , FN31, FN1 ,       LEFT, UP  , DOWN, RGHT,
-                                                    F13 ,       F16 
+    BSLS, Z   , X   , M   , C   , V   ,       SPC , F15 ,       F18 , F19 ,       K   , L   , COMM, DOT , SLSH, MINS,
+          FN24, FN23, FN22, FN21,       FN20, FN25, F14 ,       F17 , FN31, FN1 ,       LEFT, UP  , DOWN, RGHT,
+                                                    FN26,       F16 
 ),
 
 // Layer1
@@ -138,8 +138,8 @@ KEYMAP(
     P1  , P2  , P3  , P4  , P5  , P6  ,                                           P7  , P8  , TRNS, TRNS, P9  , P0  ,
     EJCT, DEL , F11 , F12 , TRNS, TRNS,                                           TRNS,  F1 , LBRC, RBRC, PPLS, MUTE,
     TRNS, 8   , 6   , 9   , 5   , 7   ,                                           3   , 1   , 0   , 2   , 4   , ENT ,
-    TRNS, F8  , F6  , F9  , F5  , F7  ,       TRNS, TRNS,       TRNS, TRNS,       F3  , SCLN, F10 , F2  , F4  , TRNS,
-          TRNS, TRNS, TRNS, TRNS,       TRNS, PENT, CAPS,       FN0 , TRNS, TRNS,       HOME, PGUP, PGDN, END ,
+    PPLS, F8  , F6  , F9  , F5  , F7  ,       TRNS, TRNS,       TRNS, FN0 ,       F3  , SCLN, F10 , F2  , F4  , BSLS,
+          TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, CAPS,       FN0 , TRNS, TRNS,       HOME, PGUP, PGDN, END ,
                                                     TRNS,       TRNS
 ),
 
@@ -149,9 +149,9 @@ KEYMAP(
     NLCK, TRNS, TRNS, TRNS, TRNS, TRNS,                                           TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
     PWR , TRNS, TRNS, TRNS, TRNS, TRNS,                                           TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
     TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,                                           TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
-    TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, MNXT,       TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+    TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       MPRV, MNXT,       TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
           TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, MPLY,       APP , TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS,
-                                                    MPRV,       TRNS
+                                                    TRNS,       TRNS
 ),
 
 // Layer3 - original Kinesis
@@ -196,8 +196,8 @@ static const uint16_t PROGMEM fn_actions[] = {
     [22] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_TAB),
     [23] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),
     [24] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_GRV),
-//  [25] = ,
-//  [26] = ,
+    [25] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ENT),
+    [26] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_F13),
 //  [27] = ,
 //  [28] = ,
 //  [29] = ,
